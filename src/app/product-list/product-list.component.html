@@ -1,0 +1,28 @@
+<h2>Products</h2>
+<div *ngFor="let prod of products">
+  <h3>
+    Id: {{ prod.id }}, name:
+    <!-- when hoovering over gives "name" and "details" -->
+    <a
+      [title]="prod.name + ' further details'"
+      [routerLink]="['/products', prod.id]"
+    >
+      {{ prod.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="prod.description">Description: {{ prod.description }}</p>
+
+  <button type="button" (click)="share()">Share</button>
+
+  <app-product-alerts
+    [prodd]="prod"
+    (notifying)="onNotifying()"
+  ></app-product-alerts>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

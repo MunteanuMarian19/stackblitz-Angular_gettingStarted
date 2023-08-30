@@ -1,0 +1,4 @@
+<p *ngIf="prodd && prodd.price > 700">
+  <!-- it shows the btn if the above condition is met -->
+  <button type="button" (click)="notifying.emit()">Notify Me</button>
+</p>
